@@ -39,6 +39,18 @@ Installation de Mongo Compass et import des données :
 5. Afficher tout les restaurants du Bronx : 
 ![image](https://user-images.githubusercontent.com/45734971/148759539-69194f48-5af2-46b7-90bf-a78843117c91.png)
 
-6.
+6. Afficher les 5 premiers restaurants du Bronx :
+![image](https://user-images.githubusercontent.com/45734971/148760006-44c85665-98a0-48b3-bbde-ff2d9bae505e.png)
 
+7. Afficher les 5 suivants du Bronx :
+![image](https://user-images.githubusercontent.com/45734971/148760046-618efa2c-1cb1-4bd8-b06c-180820481e0c.png)
+
+8. Afficher les restaurants avec un score supérieur a 90 :
+![image](https://user-images.githubusercontent.com/45734971/148761020-77dab0e0-4f46-4c6a-ba3f-a1adf1616a38.png)
+
+9. dsd
+
+10. ds
+
+11. 
 
