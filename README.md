@@ -50,8 +50,9 @@ Installation de Mongo Compass et import des données :
 
 ## Début du projet TP MONGODB 
 
-On commence par réfléchir a quel type de projet pourrait correspondre le sujet de la semaine, ici on doit pouvoir récupérer des données clients dans le cadre de la restauration, il nous faut donc un projet context nous permettant d'enregistrer de nouveaux utilisateurs dans notre base de données.
+On commence par réfléchir a quel type de projet pourrait correspondre le sujet de la semaine, ici on doit pouvoir récupérer des données clients dans le cadre de la restauration, il nous faut donc un projet context nous permettant d'enregistrer de nouveaux utilisateurs dans notre base de données et potentiellement d'utiliser ces données dans l'application.
 Le projet aura comme système de gestion de base de données MongoDB car il peut nous permettre de gérer des systèmes assez complexes de base de données et dans un cas comme celui là ou l'ont possède plusieurs miliers de clients/rows, il sera bien plus pertinent qu'un mySql ou autre outil de gestion de base de données moins performant.
+
 On commence par mocker des data clients via n'importe quel site de génération de mock data : 
 ![image](https://user-images.githubusercontent.com/45734971/148910172-400990a8-ccd8-47b8-97d8-44ca1242ec73.png)
 
