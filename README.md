@@ -48,9 +48,12 @@ Installation de Mongo Compass et import des données :
 8. Afficher les restaurants avec un score supérieur a 90 :
 ![image](https://user-images.githubusercontent.com/45734971/148761020-77dab0e0-4f46-4c6a-ba3f-a1adf1616a38.png)
 
-9. dsd
+## Début du projet TP MONGODB 
 
-10. ds
+On commence par réfléchir a quel type de projet pourrait correspondre le sujet de la semaine, ici on doit pouvoir récupérer des données clients dans le cadre de la restauration, il nous faut donc un projet context nous permettant d'enregistrer de nouveaux utilisateurs dans notre base de données.
+Le projet aura comme système de gestion de base de données MongoDB car il peut nous permettre de gérer des systèmes assez complexes de base de données et dans un cas comme celui là ou l'ont possède plusieurs miliers de clients/rows, il sera bien plus pertinent qu'un mySql ou autre outil de gestion de base de données moins performant.
+On commence par mocker des data clients via n'importe quel site de génération de mock data : 
+![image](https://user-images.githubusercontent.com/45734971/148910172-400990a8-ccd8-47b8-97d8-44ca1242ec73.png)
 
-11. 
-
+Une fois les données mockés on peut les insérer dans notre nouvelle base de données clients :
+![image](https://user-images.githubusercontent.com/45734971/148910347-f27f43e8-049c-497d-b393-b03bb3cd8023.png)
