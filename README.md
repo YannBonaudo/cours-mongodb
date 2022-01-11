@@ -56,4 +56,27 @@ On commence par mocker des data clients via n'importe quel site de génération 
 ![image](https://user-images.githubusercontent.com/45734971/148910172-400990a8-ccd8-47b8-97d8-44ca1242ec73.png)
 
 Une fois les données mockés on peut les insérer dans notre nouvelle base de données clients :
-![image](https://user-images.githubusercontent.com/45734971/148910347-f27f43e8-049c-497d-b393-b03bb3cd8023.png)
+![image](https://user-images.githubusercontent.com/45734971/148912663-ff5c8ce4-564d-458f-bb20-b809826c65b9.png)
+
+On se rend compte que les données mockés ne sont pas correct et que la latitude et la longitude ne peuvent pas être lue par le logiciel car probablement les latitudes et longitudes sont dans le mauvais ordre : 
+![image](https://user-images.githubusercontent.com/45734971/148924830-382fb117-c2b7-48bb-94cf-c8c0d0add085.png)
+
+Connexion de MongoDB Charts a notre base de données clients 
+![image](https://user-images.githubusercontent.com/45734971/148925447-80d7f630-fc77-49d5-a080-6fa41e998769.png)
+
+Prise en main de charts :
+![image](https://user-images.githubusercontent.com/45734971/148926316-536ef77e-1e2d-4441-80da-77d7e6deadbf.png)
+
+Charts nous permet de créer des graphiques grâce aux données qu'on lui confie, par exemple grace aux données gps des clients, savoir ou le traffic est le plus présent, ou le moins présent. Dans le cadre d'un projet, cela permet de savoir par exemple où centrer le marketing de la chaine de restaurant, par exemple là ou le taux de clients est le plus bas on peut penser a peut etre ouvrir un restaurant afin de fideliser plus de clients ou dans le cadre d'une ville ou métropole, de savoir ou placer les pubs du restaurant afin que plus de clients entendent parler de l'établissement.
+
+Liaison de nos données de coordonnées des clients lus sur charts : 
+![image](https://user-images.githubusercontent.com/45734971/148927663-56f09425-8586-4042-9dc3-688f9563657f.png)
+
+
+
+
+
+
+
+
+
