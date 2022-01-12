@@ -30,6 +30,25 @@ Charts nous permet de créer des graphiques grâce aux données qu'on lui confie
 Liaison de nos données de coordonnées des clients lus sur charts : 
 ![image](https://user-images.githubusercontent.com/45734971/148927663-56f09425-8586-4042-9dc3-688f9563657f.png)
 
+## Aggrégation
+
+Les Aggrégation permette de mettre en commun, relier ou manipuler des données, créer des jointures par exemple : 
+![image](https://user-images.githubusercontent.com/45734971/149180713-b6811f25-9789-409e-8d7a-ad05c81d5a15.png)
+
+## Index
+
+Un index permet de stocker une plus petite portion de données grace a un filtre pour pouvoir au future trouver plus rapidement la donnée que l'on recherche sans avoir a passer sur chaque document de la base.
+
+## Vues
+
+Les vues sont des collections indépendantes en lecture seule qui sont créées a partir de la base la plupart du tempps afin de sauvegarder une requête que l'on ne veut pas avoir a répéter tout le temps. On ne peut que la supprimer si l'on veut la modifier et il est possible d'indexer une vue également.
+
+Indication de la documentation afin de créer une vue :
+![image](https://user-images.githubusercontent.com/45734971/149181593-760a64eb-7c54-4332-ae78-32e0479d3693.png)
+
+Pour récupérer une vue d'après la même doc: 
+![image](https://user-images.githubusercontent.com/45734971/149181775-54a34914-ff58-4b7f-bcb7-f991def1b2ec.png)
+
 ## Installation Mongodb avec Atlas 
 
 Création d'un compte Atlas 
