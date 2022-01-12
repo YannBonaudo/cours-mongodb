@@ -1,5 +1,35 @@
 # Compte rendu Yann Mongo DB semaine du 10 janvier
 
+## Génèse
+On commence par réfléchir a quel type de projet pourrait correspondre le sujet de la semaine, ici on doit pouvoir récupérer des données clients dans le cadre de la restauration, il nous faut donc un projet context nous permettant d'enregistrer de nouveaux utilisateurs dans notre base de données et potentiellement d'utiliser ces données dans l'application.
+Le projet aura comme système de gestion de base de données MongoDB car il peut nous permettre de gérer des systèmes assez complexes de base de données et dans un cas comme celui là ou l'ont possède plusieurs miliers de clients/rows, il sera bien plus pertinent qu'un mySql ou autre outil de gestion de base de données moins performant.
+
+On commence par mocker des data clients via n'importe quel site de génération de mock data : 
+![image](https://user-images.githubusercontent.com/45734971/148910172-400990a8-ccd8-47b8-97d8-44ca1242ec73.png)
+
+Une fois les données mockés on peut les insérer dans notre nouvelle base de données clients :
+![image](https://user-images.githubusercontent.com/45734971/148912663-ff5c8ce4-564d-458f-bb20-b809826c65b9.png)
+
+On se rend compte que les données mockés ne sont pas correct et que la latitude et la longitude ne peuvent pas être lue par le logiciel car probablement les latitudes et longitudes sont dans le mauvais ordre : 
+![image](https://user-images.githubusercontent.com/45734971/148924830-382fb117-c2b7-48bb-94cf-c8c0d0add085.png)
+
+## Géospatialisation des données 
+
+Nous allons avoir besoin de spatialiser les données gps, pour cela MongoDB mets a disposition les requêtes Géospatiale, pour fonctionner elles nécéssites des données géométriques (point, polygone ou multiline) qui permettent au final de calculer plusieurs choses, des distances, des radiants, des zone géographiques
+
+Nous allons tenter d'utiliser les géodatas récupérées des utilisateurs sous forme longitude/latitude& pour les lire avec charts. 
+
+Connexion de MongoDB Charts a notre base de données clients 
+![image](https://user-images.githubusercontent.com/45734971/148925447-80d7f630-fc77-49d5-a080-6fa41e998769.png)
+
+Prise en main de charts :
+![image](https://user-images.githubusercontent.com/45734971/148926316-536ef77e-1e2d-4441-80da-77d7e6deadbf.png)
+
+Charts nous permet de créer des graphiques grâce aux données qu'on lui confie, par exemple grace aux données gps des clients, savoir ou le traffic est le plus présent, ou le moins présent. Dans le cadre d'un projet, cela permet de savoir par exemple où centrer le marketing de la chaine de restaurant, par exemple là ou le taux de clients est le plus bas on peut penser a peut etre ouvrir un restaurant afin de fideliser plus de clients ou dans le cadre d'une ville ou métropole, de savoir ou placer les pubs du restaurant afin que plus de clients entendent parler de l'établissement.
+
+Liaison de nos données de coordonnées des clients lus sur charts : 
+![image](https://user-images.githubusercontent.com/45734971/148927663-56f09425-8586-4042-9dc3-688f9563657f.png)
+
 ## Installation Mongodb avec Atlas 
 
 Création d'un compte Atlas 
@@ -48,30 +78,6 @@ Installation de Mongo Compass et import des données :
 8. Afficher les restaurants avec un score supérieur a 90 :
 ![image](https://user-images.githubusercontent.com/45734971/148761020-77dab0e0-4f46-4c6a-ba3f-a1adf1616a38.png)
 
-## Début du projet TP MONGODB 
-
-On commence par réfléchir a quel type de projet pourrait correspondre le sujet de la semaine, ici on doit pouvoir récupérer des données clients dans le cadre de la restauration, il nous faut donc un projet context nous permettant d'enregistrer de nouveaux utilisateurs dans notre base de données et potentiellement d'utiliser ces données dans l'application.
-Le projet aura comme système de gestion de base de données MongoDB car il peut nous permettre de gérer des systèmes assez complexes de base de données et dans un cas comme celui là ou l'ont possède plusieurs miliers de clients/rows, il sera bien plus pertinent qu'un mySql ou autre outil de gestion de base de données moins performant.
-
-On commence par mocker des data clients via n'importe quel site de génération de mock data : 
-![image](https://user-images.githubusercontent.com/45734971/148910172-400990a8-ccd8-47b8-97d8-44ca1242ec73.png)
-
-Une fois les données mockés on peut les insérer dans notre nouvelle base de données clients :
-![image](https://user-images.githubusercontent.com/45734971/148912663-ff5c8ce4-564d-458f-bb20-b809826c65b9.png)
-
-On se rend compte que les données mockés ne sont pas correct et que la latitude et la longitude ne peuvent pas être lue par le logiciel car probablement les latitudes et longitudes sont dans le mauvais ordre : 
-![image](https://user-images.githubusercontent.com/45734971/148924830-382fb117-c2b7-48bb-94cf-c8c0d0add085.png)
-
-Connexion de MongoDB Charts a notre base de données clients 
-![image](https://user-images.githubusercontent.com/45734971/148925447-80d7f630-fc77-49d5-a080-6fa41e998769.png)
-
-Prise en main de charts :
-![image](https://user-images.githubusercontent.com/45734971/148926316-536ef77e-1e2d-4441-80da-77d7e6deadbf.png)
-
-Charts nous permet de créer des graphiques grâce aux données qu'on lui confie, par exemple grace aux données gps des clients, savoir ou le traffic est le plus présent, ou le moins présent. Dans le cadre d'un projet, cela permet de savoir par exemple où centrer le marketing de la chaine de restaurant, par exemple là ou le taux de clients est le plus bas on peut penser a peut etre ouvrir un restaurant afin de fideliser plus de clients ou dans le cadre d'une ville ou métropole, de savoir ou placer les pubs du restaurant afin que plus de clients entendent parler de l'établissement.
-
-Liaison de nos données de coordonnées des clients lus sur charts : 
-![image](https://user-images.githubusercontent.com/45734971/148927663-56f09425-8586-4042-9dc3-688f9563657f.png)
 
 
 
