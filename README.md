@@ -49,6 +49,14 @@ Indication de la documentation afin de créer une vue :
 Pour récupérer une vue d'après la même doc: 
 ![image](https://user-images.githubusercontent.com/45734971/149181775-54a34914-ff58-4b7f-bcb7-f991def1b2ec.png)
 
+
+
+
+
+
+
+
+
 ## Installation Mongodb avec Atlas 
 
 Création d'un compte Atlas 
@@ -71,7 +79,7 @@ La database est créée :
 Installation de Mongo Compass et import des données : 
 ![image](https://user-images.githubusercontent.com/45734971/148756761-00b41031-3148-4378-b423-6c89322b82fc.png)
 
-## Début du questionnaire
+## Questionnaire mongodb
 
 1. De base tout les documents sont affichés si on ne filtre rien :
 ![image](https://user-images.githubusercontent.com/45734971/148758144-20f3c771-f840-49d9-b0e4-b69818d71680.png)
