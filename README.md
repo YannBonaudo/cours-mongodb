@@ -173,7 +173,7 @@ Installation de Mongo Compass et import des données :
 
 ## Ce que j'ai pensé de la semaine
 
-ça va c'était sympa même si un peu de mal a se lancer. Je pense que le réel probleme est que on ne sait jamais se situé au niveau du travail effectué. Par exemple je te rend ça et j'ai aucune idée si ça va me ramener un 2 ou un 18. peut etre essayer de moins rendre le sujet ouvert afin que tout le monde sache si ils ont effectués un travail suffisant ou pas. Mais sinon c'était sympa merci Mounir.
+ça va c'était sympa même si un peu de mal a se lancer. Je pense que le réel probleme est que on ne sait jamais se situé au niveau du travail effectué. Par exemple je te rend ça et j'ai aucune idée si ça va me ramener un 2 ou un 18. peut etre essayer de rendre le sujet ouvert moins ouvert afin que tout le monde sache si ils ont effectués un travail suffisant ou pas, j'ai trouvé ça un peu frustrant. Mais sinon c'était sympa merci Mounir je pense avoir compris.
 
 
 
