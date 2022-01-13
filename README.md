@@ -2,7 +2,8 @@
 
 ## Génèse
 Nous cherchons a installer dans nos chaines de restaurants des bornes afin de passer commandes ou les clients devront remplir leurs informations afin de pouvoir finaliser une commande, ici on doit pouvoir récupérer des données clients dans le cadre de la restauration, cela nous permettra d'enregistrer de nouveaux utilisateurs dans notre base de données et potentiellement d'utiliser ces données dans l'application.
-Le projet aura comme système de gestion de base de données MongoDB car il peut nous permettre de gérer des systèmes assez complexes de base de données et dans un cas comme celui là ou l'ont possède plusieurs miliers de clients/rows, il sera bien plus pertinent qu'un mySql ou autre outil de gestion de base de données moins performant.
+Le projet aura comme système de gestion de base de données MongoDB car il peut nous permettre de gérer des systèmes assez complexes de base de données et dans un cas comme celui là ou l'ont possède plusieurs miliers de clients, il sera bien plus pertinent qu'un mySql ou autre outil de gestion de base de données moins performant.
+Le but final sera de renforcer le marketing de notre chaine de restaurant de plusieurs manières grace a MongoDB.
 
 On commence par mocker des data clients via n'importe quel site de génération de mock data : 
 ![image](https://user-images.githubusercontent.com/45734971/148910172-400990a8-ccd8-47b8-97d8-44ca1242ec73.png)
@@ -117,11 +118,6 @@ Indication de la documentation afin de créer une vue :
 
 Pour récupérer une vue d'après la même doc: 
 ![image](https://user-images.githubusercontent.com/45734971/149181775-54a34914-ff58-4b7f-bcb7-f991def1b2ec.png)
-
-
-
-
-
 
 
 
