@@ -171,8 +171,9 @@ Installation de Mongo Compass et import des données :
 8. Afficher les restaurants avec un score supérieur a 90 :
 ![image](https://user-images.githubusercontent.com/45734971/148761020-77dab0e0-4f46-4c6a-ba3f-a1adf1616a38.png)
 
+## Ce que j'ai pensé de la semaine
 
-
+ça va c'était sympa même si un peu de mal a se lancer. Je pense que le réel probleme est que on ne sait jamais se situé au niveau du travail effectué. Par exemple je te rend ça et j'ai aucune idée si ça va me ramener un 2 ou un 18. peut etre essayer de moins rendre le sujet ouvert afin que tout le monde sache si ils ont effectués un travail suffisant ou pas. Mais sinon c'était sympa merci Mounir.
 
 
 
