@@ -1,7 +1,7 @@
 # Compte rendu Yann Mongo DB semaine du 10 janvier
 
 ## Génèse
-On commence par réfléchir a quel type de projet pourrait correspondre le sujet de la semaine, ici on doit pouvoir récupérer des données clients dans le cadre de la restauration, il nous faut donc un projet context nous permettant d'enregistrer de nouveaux utilisateurs dans notre base de données et potentiellement d'utiliser ces données dans l'application.
+Nous cherchons a installer dans nos chaines de restaurants des bornes afin de passer commandes ou les clients devront remplir leurs informations afin de pouvoir finaliser une commande, ici on doit pouvoir récupérer des données clients dans le cadre de la restauration, cela nous permettra d'enregistrer de nouveaux utilisateurs dans notre base de données et potentiellement d'utiliser ces données dans l'application.
 Le projet aura comme système de gestion de base de données MongoDB car il peut nous permettre de gérer des systèmes assez complexes de base de données et dans un cas comme celui là ou l'ont possède plusieurs miliers de clients/rows, il sera bien plus pertinent qu'un mySql ou autre outil de gestion de base de données moins performant.
 
 On commence par mocker des data clients via n'importe quel site de génération de mock data : 
@@ -15,9 +15,9 @@ On se rend compte que les données mockés ne sont pas correct et que la latitud
 
 ## Géospatialisation des données 
 
-Nous allons avoir besoin de spatialiser les données gps, pour cela MongoDB mets a disposition les requêtes Géospatiale, pour fonctionner elles nécéssites des données géométriques (point, polygone ou multiline) qui permettent au final de calculer plusieurs choses, des distances, des radiants, des zone géographiques
+Nous allons avoir besoin de spatialiser les données gps afin de pouvoir se renseigner sur nos clients géopgraphiquement, pour cela MongoDB mets a disposition les requêtes Géospatiale, pour fonctionner elles nécéssites des données géométriques (point, polygone ou multiline) qui permettent au final de calculer plusieurs choses, des distances, des radiants, des zone géographiques
 
-Nous allons tenter d'utiliser les géodatas récupérées des utilisateurs sous forme longitude/latitude& pour les lire avec charts. 
+Nous allons tenter d'utiliser les géodatas récupérées des utilisateurs sous forme longitude/latitude pour les lire avec charts. 
 
 Connexion de MongoDB Charts a notre base de données clients 
 ![image](https://user-images.githubusercontent.com/45734971/148925447-80d7f630-fc77-49d5-a080-6fa41e998769.png)
@@ -29,6 +29,75 @@ Charts nous permet de créer des graphiques grâce aux données qu'on lui confie
 
 Liaison de nos données de coordonnées des clients lus sur charts : 
 ![image](https://user-images.githubusercontent.com/45734971/148927663-56f09425-8586-4042-9dc3-688f9563657f.png)
+
+## Restaurants les plus visités
+
+MongoDB peut nous permettre de récuperer de multiples renseignement sur nos clients. Par exemple, ici nous cherchons a savoir quels restaurants sont les plus visités par nos clients afin de pouvoir les comparer aux autres et trouver des solutions afin d'augmenter les visites dans les autres restaurants également.
+
+```
+db.visits.aggregate([{
+  "$sortByCount": "$restaurant_id"
+}])
+```
+Cette aggregation nous permet de récupérer le restaurant qui est le plus représenté dans la collection visits.
+
+## Récompenser les clients inscrits 
+
+On peut également par exemple récupérer la date d'aujourd'hui et comparer aux dates de naissance des clients afin de savoir quand est leur anniversaire et leur envoyer un sms ou un mail leur proposant un repas gratuit ou a moindre coût :
+
+```
+db.clients.find({
+   "$expr": { 
+       "$and": [
+            { "$eq": [ { "$dayOfMonth": "$date_de_naissance" }, { "$dayOfMonth": new Date() } ] },
+            { "$eq": [ { "$month"     : "$date_de_naissance" }, { "$month"     : new Date() } ] }
+       ]
+    }
+});
+```
+Cela necessite une date de naissance sous format DateTime pour fonctionner, on compare le jour et le mois de la date de naissance au jour et mois d'aujourd'hui afin de nous sortir les utilisateurs ou cela coincide. 
+
+## Créer des jeux récurrent
+
+MongoDB permet de pouvoir récupérer aléatoirement un document d'un collection. Grâce a cette fonctionnalité, on pourrait faire gagner a un ou plusieurs clients des repas sur toute l'année par exemple, si il est inscrit dans notre collection client.
+
+Cette requete permet de récupérer 1 client aléatoirement dans toute la collection clients :
+
+```
+db.clients.aggregate([{ $sample: { size: 1 } }])
+```
+
+si l'on souhaite plus de gagnants il suffit de rajouter plus que 1 a "size".
+
+## Promotion pour les visiteurs récurrents
+
+On souhaite, si un visiteur viens plusieurs fois, pouvoir le récompenser. On aimerais que toutes les 4 visites un visiteurs puis gagner 25% sur sa commande.
+Donc si un visiteur enregistre 4 visites, il y aura droit. Donc lors d'une nouvelle visites d'un clients, on vérifiera a combien il en est afin de savoir si il doit être récompensé.
+
+```
+db.clients.aggregate({
+   $lookup:
+    {
+        from: "visits",
+        localField: "id",
+        foreignField: "visitor_id",
+        as: "visitor_visits"
+    }
+   $project: 
+    {
+      numberOfVisits: { $cond: {if: { $isArray: "$visitor_visits"}, then: {$size: "$visitor_visits"}, else: "Aucune"} 
+    }
+})
+```
+On recoit au final le nombre de visites du clients.
+
+## Campagnes téléphoniques
+
+On peut également se créer une liste de numéro de téléphone en cas de campagne téléphonique prévue par le marketing :
+
+```
+db.clients.find({}, { phone: 1 })
+```
 
 ## Aggrégation
 
