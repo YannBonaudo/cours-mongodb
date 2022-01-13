@@ -7,6 +7,7 @@ Le but final sera de renforcer le marketing de notre chaine de restaurant de plu
 
 On commence par mocker des data clients via n'importe quel site de génération de mock data : 
 ![image](https://user-images.githubusercontent.com/45734971/148910172-400990a8-ccd8-47b8-97d8-44ca1242ec73.png)
+(ce sera ensuite modifié afin d'y rajouter les dates de naissances des clients)
 
 Une fois les données mockés on peut les insérer dans notre nouvelle base de données clients :
 ![image](https://user-images.githubusercontent.com/45734971/148912663-ff5c8ce4-564d-458f-bb20-b809826c65b9.png)
